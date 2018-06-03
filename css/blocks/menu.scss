@@ -1,0 +1,122 @@
+.menu {
+    background: url(../img/bg/8.png) 50% no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.menu__title {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+$size: 420;
+$sizeCtrl: 30;
+$color-1: #000000; // Blue 
+$color-2: #8899a7; // Active bullet & text
+.team-slider {
+    position: relative;
+    margin-top: 48px;
+    width: $size + $sizeCtrl + px;
+    .slider-container {
+        width: $size+px;
+        overflow: hidden;
+        margin: 1em auto;
+        ul.slider {
+            width: $size*3+px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: margin .3s ease;
+            li.slides {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                float: left;
+                width: $size+px;
+                img {
+                    max-width: $size+px;
+                    display: block;
+                }
+            }
+        }
+    }
+    // Controls
+    .slider-controls {
+        .control-left {
+            float: left;
+            margin-left: -45px;
+            margin-top: -20%;
+        }
+        .control-right {
+            float: right;
+            margin-right: -45px;
+            margin-top: -20%;
+        }
+        a {
+            display: block;
+            span {
+                display: block;
+            }
+            &:active {
+                span {
+                    transform: scale(.9);
+                    animation: drop .3s linear;
+                    box-shadow: 0 0 0 4px white, 0 0 0 5px rgba(#007EE5, .3);
+                }
+            }
+        }
+    }
+    // Bullets 
+    .slider-bullets ul {
+        list-style: none;
+        width: 103px;
+        height: 16px;
+        display: block;
+        margin: 20px auto 55px;
+        padding: 0;
+    }
+    .slider-bullets ul li {
+        width: 16px;
+        height: 16px;
+        display: block;
+        float: left;
+        margin: 0 8px;
+        border: 2px solid #000000;
+        border-radius: 100%;
+        &:active {
+            transform: scale(1.1);
+            animation: drop .3s ease;
+            box-shadow: 0 0 0 4px white, 0 0 0 5px rgba(#007EE5, .3);
+        }
+    }
+    .slider-bullets ul li:nth-child(1) {
+        margin-left: 0;
+    }
+    .slider-bullets ul li:nth-child(3) {
+        margin-right: 0;
+    }
+    .slider-bullets ul li.active {
+        background: #000000;
+    }
+    .slider-bullets ul li a {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+// Fancy stuff
+@keyframes drop {
+    0% {
+        box-shadow: 0 0 0 white;
+    }
+    80% {
+        box-shadow: 0 0 0 4px white, 0 0 0 5px rgba(#007EE5, .3);
+    }
+    100% {
+        box-shadow: 0 0 0 4px white, 0 0 0 5px rgba(#007EE5, .3);
+    }
+}
